@@ -14,6 +14,15 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+configMap:
+  create: true
+  # data: {}
+  data:
+    ENV-VAR-STRINT: "env-var-string"
+    ENV-VAR-BOOLEAN: "true"
+    ENV-VAR-INT: "123"
+    
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true

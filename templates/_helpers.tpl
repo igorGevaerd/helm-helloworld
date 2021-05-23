@@ -60,3 +60,14 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Create the name of the configmap to use
+*/}}
+{{- define "helm-helloworld.configMapName" -}}
+{{- if .Values.configMap.create }}
+{{- default (include "helm-helloworld.fullname" .) .Values.configMap.name }}
+{{- else }}
+{{- default "default" .Values.configMap.name }}
+{{- end }}
+{{- end }}
